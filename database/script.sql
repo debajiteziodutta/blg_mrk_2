@@ -1,0 +1,34 @@
+CREATE DATABASE crud2;
+
+use crud2;
+
+CREATE TABLE task(
+  id INT(11) PRIMARY KEY AUTO_INCREMENT,
+  email VARCHAR(255),
+  title VARCHAR(255) NOT NULL,
+  description TEXT,
+  images VARCHAR(255),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+use crud2;
+CREATE TABLE signup(
+  id INT(11) PRIMARY KEY AUTO_INCREMENT,
+  email VARCHAR(255) NOT NULL,
+  password VARCHAR(255),
+  status BOOLEAN,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+use crud2;
+CREATE TABLE btn(
+  id INT(11) PRIMARY KEY AUTO_INCREMENT,
+  getstarted VARCHAR(50),
+  LogIn VARCHAR(50),
+  Reset VARCHAR(50),
+  creat VARCHAR(50),
+  Test VARCHAR(50),
+  SignUp VARCHAR(50),
+  status BOOLEAN
+);
+DESCRIBE task;

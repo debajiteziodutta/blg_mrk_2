@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Admin</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+/* The side navigation menu */
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #333;
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+
+.vertical-nav {
+  min-width: 17rem;
+  width: 17rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s;
+}
+
+.page-content {
+  width: calc(100% - 17rem);
+  margin-left: 17rem;
+  transition: all 0.4s;
+}
+
+/* for toggle behavior */
+
+#sidebar.active {
+  margin-left: -17rem;
+}
+
+#content.active {
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -17rem;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+  #content {
+    width: 100%;
+    margin: 0;
+  }
+  #content.active {
+    margin-left: 17rem;
+    width: calc(100% - 17rem);
+  }
+}
+
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSE
+* ==========================================
+*
+*/
+
+body {
+  background: #599fd9;
+  background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
+  background: linear-gradient(to right, #599fd9, #c2e59c);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.separator {
+  margin: 3rem 0;
+  border-bottom: 1px dashed #fff;
+}
+
+.text-uppercase {
+  letter-spacing: 0.1em;
+}
+
+.text-gray {
+  color: #aaa;
+}
+.sidebar-toggler-icon{
+  width: 25px;
+  height: 4px;
+  background-color: #fff;
+  margin: 3px 0;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <a class="navbar-brand" href="../index.php">XYZ Company</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto" style="padding:10px;">
+      <li class="nav-item active"> <a class="nav-link" href="index.php"> Dashboard<span class="sr-only">(current)</span></a> </li>
+      <li class="nav-item"> <a class="nav-link" href="logout.php">Logout</a> </li>
+      <li class="nav-item"> <a class="nav-link" href="change-password.php">Change Password</a> </li>
+    </ul>
+  </div>
+</nav>
+<!-- Vertical navbar -->
+<div class="vertical-nav bg-white" id="sidebar">
+  <div class="py-4 px-3 mb-4 bg-light">
+    <div class="media d-flex align-items-center"><img src="../images/admin-hasmat.jpg" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+      <div class="media-body">
+        <h4 class="m-0">Hasmat  Noorani</h4>
+        <p class="font-weight-light text-muted mb-0">Administrator</p>
+      </div>
+    </div>
+  </div>
+  <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Dashboard</p>
+  <ul class="nav flex-column bg-white mb-0">
+     <li class="nav-item"> <a href="comp-navbar.php" class="nav-link text-dark font-italic"> <i class="fa fa-th-large mr-3 text-primary fa-fw"></i> Navbar </a> </li>
+    <li class="nav-item"> <a href="typo.php" class="nav-link text-dark font-italic"> <i class="fa fa-edit mr-3 text-primary fa-fw"></i> Typography </a> </li>
+    <li class="nav-item"> <a href="comp-buttons.php" class="nav-link text-dark font-italic"> <i class="fa fa-eercast  mr-3 text-primary fa-fw"></i> Buttons</a> </li>
+    <li class="nav-item"> <a href="comp-bg.php" class="nav-link text-dark font-italic"> <i class="fa fa-image mr-3 text-primary fa-fw"></i> Background </a> </li>
+  </ul>
+</div>
+<!-- End vertical navbar -->
+<div class="page-content p-2" id="content">
+<!-- Toggle button -->
+<button id="sidebarCollapse" type="button" class="btn btn-dark" data-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <i class="fa fa-cog" style="font-size:20px"></i> </button><br /><br />
+<!--Your Content here -->
+<div class="container">
+<div class="card">
+  <div class="card-header">
+    Navbar
+  </div>
+  <div class="card-body">
+    <h5 class="card-title" align="">Create your navbar here</h5>
+<p class="card-text" align="">Fill up the form to create your navbar</p>
+<br /><br />
+    <div class="container">
+      <div class="row">
+      <div class="col-sm">
+        
+        <form action="comp-navbar-item" method="POST">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Navbar Title</label>
+            <input type="text" class="form-control" data-toggle="tooltip" data-placement="right" title="Enter a Brand name that will be appeared on the Left-Most area of the navbar" id="Text1" aria-describedby="emailHelp" placeholder="Enter the Brand Name">
+    
+            <label for="exampleInputEmail1">Navbar Colour</label>
+            <input type="text" class="form-control" data-toggle="tooltip" data-placement="right" title="Enter a hexadecimal code for colour" id="Text1" aria-describedby="emailHelp" placeholder="Enter the Colour Code">
+    
+            <label for="exampleInputEmail1">Font Colour</label>
+            <input type="text" class="form-control" data-toggle="tooltip" data-placement="right" title="Enter a hexadecimal code for colour" id="Text1" aria-describedby="emailHelp" placeholder="Enter the Colour Code">
+            <br />
+                <div class="container-fluid" align="right">
+                  <button class="btn btn-primary" type="submit">Proceed</button>
+  
+                </div>
+
+          </div>  
+        </form>
+      </div>
+</div>
+<script type="text/javascript">
+
+$(function() {
+  // Sidebar toggle behavior
+  $('#sidebarCollapse').on('click', function() {
+    $('#sidebar, #content').toggleClass('active');
+  });
+});</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+INSERT INTO `btn`( `getstarted`, `LogIn`, `Reset`, `creat`, `Test`, `SignUp`, `status`) VALUES ('btn btn-succes sweep-to-bottom','btn btn-succes sweep-to-bottom','btn btn-default','btn btn-succes sweep-to-bottom btn-block','btn btn-succes sweep-to-bottom btn-block','btn btn-succes sweep-to-bottom','1')
